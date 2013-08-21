@@ -1,0 +1,17 @@
+<%= form_for(@custom_field) do |f| %>
+  <% if @custom_field.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@custom_field.errors.count, "error") %> prohibited this custom_field from being saved:</h2>
+
+      <ul>
+      <% @custom_field.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
